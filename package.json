@@ -3,10 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "heroku:build": "ng build",
+    "start": "node heroku-server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "pree2e": "webdriver-manager update",
+    "postinstall": "ng build --aot -prod",
+    "heroku:deploy": "git push origin master &&  git push heroku master",
     "e2e": "ng e2e"
   },
   "private": true,
